@@ -28,6 +28,7 @@ export const fetchJewelryProducts = async () => {
     throw error;
   }
 };
+
 export const fetchMenProducts = async () => {
   try {
     const response = await axios.get(menCategory);
