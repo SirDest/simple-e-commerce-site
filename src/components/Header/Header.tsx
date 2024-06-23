@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import {
-  IoCartOutline,
-  IoChevronDownOutline,
-  IoMenuOutline,
-  IoPersonOutline,
-} from "react-icons/io5";
+import { IoCartOutline, IoMenuOutline, IoPersonOutline } from "react-icons/io5";
 import { navElements } from "../utils/navElements";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [activePage, setActivePage] = useState("");
-
-  const handleClick = (page: any) => {
-    setActivePage(page);
-  };
   return (
     <div className='w-full h-fit rounded flex gap-2'>
       <button className='p-3 text-[15px] w-fit rounded bg-white text-black flex gap-4 items-center'>
@@ -26,18 +17,15 @@ const Header = () => {
           REVELOFFICE
         </a>
         <ul className='md:flex hidden text-[15px] items-center lg:gap-10 gap-6'>
-          {navElements.map(({ name }) => (
-            <li
+          {navElements.map(({ name, link }) => (
+            <Link
+              to={link}
               key={name}
-              className={`cursor-pointer flex font-normal items-center gap-2 ${
-                activePage === name
-                  ? "text-black"
-                  : "text-gray-500 hover:text-black"
-              }`}
-              onClick={() => handleClick(name)}
+              // activeClassName='text-gray-500 hover:text-black cursor-pointer flex font-normal items-center gap-2'
+              className='text-gray-500 hover:text-black cursor-pointer flex font-normal items-center gap-2'
             >
               {name}
-            </li>
+            </Link>
           ))}
         </ul>
       </div>

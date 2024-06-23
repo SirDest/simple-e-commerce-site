@@ -1,7 +1,7 @@
 export const navElements = [
-  { name: "Shop" },
-  { name: "Track Orders" },
-  { name: "Contact" },
-  { name: "Collection" },
-  { name: "Help" },
+  { name: "Products", link: "products" },
+  { name: "Men", link: "men" },
+  { name: "Women", link: "women" },
+  { name: "Electronics", link: "electronics" },
+  { name: "Jewelry", link: "jewelry" },
 ];
