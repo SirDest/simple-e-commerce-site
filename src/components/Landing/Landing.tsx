@@ -17,8 +17,6 @@ const Landing = () => {
     const getProducts = async () => {
       try {
         const productsData = await fetchProducts();
-        console.log("All products", productsData);
-
         const randomProducts = getRandomProducts(productsData, 7);
         setProducts(randomProducts);
       } catch (error) {
@@ -37,8 +35,15 @@ const Landing = () => {
           key={id}
           className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group overflow-hidden'
         >
-          <div className='w-full flex-1 border-b relative'>
-            {/* Placeholder for image */}
+          <div
+            className='w-full flex-1 border-b relative'
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            {/* div for image */}
           </div>
           <div className='flex flex-col justify-between h-fit gap-2'>
             <p className='text-[13px] font-semibold truncate group-hover:whitespace-normal group-hover:overflow-visible'>
@@ -48,10 +53,9 @@ const Landing = () => {
               <div>
                 <p>{price} USD</p>
               </div>
-              <div className='p-2 bg-gray-200 cursor-pointer hover:bg-gray-400 ease-in-out duration-500 rounded'>
-                {/* Assuming IoCartOutline is an icon component */}
+              <button className='p-2 bg-gray-200 cursor-pointer hover:bg-gray-400 ease-in-out duration-500 rounded'>
                 <IoCartOutline className='text-[15px] text-gray-700 font-light' />
-              </div>
+              </button>
             </div>
           </div>
         </div>

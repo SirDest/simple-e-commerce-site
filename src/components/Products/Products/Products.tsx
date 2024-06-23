@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../Header/Header";
-import { IoArrowForwardOutline } from "react-icons/io5";
-import Landing from "./Landing";
+import Breadcrumbs from "../../Breadcrumbs";
+import ProductCard from "./ProductCard";
 
-const HomePage = () => {
+const Products = () => {
   return (
     <>
-      <Header />
       <div className='w-full h-fit p-7 bg-white text-black rounded flex flex-col'>
+        <Breadcrumbs />
         <div className='flex flex-col md:flex-row justify-between w-full h-fit py-4 border-b border-gray-300'>
           <h1 className='text-black text-[40px] font-normal'>Shop With Us</h1>
           <p className='text-[13px] md:w-[400px]'>
@@ -18,20 +17,13 @@ const HomePage = () => {
         </div>
         <div className='w-full h-fit text-right flex justify-between py-4'>
           <p className='text-black text-[13px] flex font-normal items-center gap-1'>
-            Random Products
+            All Products
           </p>
-          <a
-            href='/products'
-            className='text-gray-400 hover:text-blue-500 cursor-pointer text-[13px] flex font-normal items-center gap-1'
-          >
-            View all products
-            <IoArrowForwardOutline />
-          </a>
         </div>
       </div>
-      <Landing />
+      <ProductCard />
     </>
   );
 };
 
-export default HomePage;
+export default Products;

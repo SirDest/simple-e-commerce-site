@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HomePage from "./components/Landing/HomePage";
 import Men from "./components/Products/Men";
-import Products from "./components/Products/Products";
+import Products from "./components/Products/Products/Products";
 import Women from "./components/Products/Women";
 import Jewelries from "./components/Products/Jewelries";
 import Electronics from "./components/Products/Electronics";

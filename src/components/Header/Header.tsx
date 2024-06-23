@@ -21,7 +21,6 @@ const Header = () => {
             <Link
               to={link}
               key={name}
-              // activeClassName='text-gray-500 hover:text-black cursor-pointer flex font-normal items-center gap-2'
               className='text-gray-500 hover:text-black cursor-pointer flex font-normal items-center gap-2'
             >
               {name}
