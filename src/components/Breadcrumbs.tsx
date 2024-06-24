@@ -22,7 +22,7 @@ const Breadcrumbs: React.FC = () => {
 
           return (
             <li key={to} className='flex items-center'>
-              <span className='mx-2'>/</span>
+              <span className='mx-2'>\</span>
               {isLast ? (
                 <span className='text-gray-500'>{value}</span>
               ) : (
