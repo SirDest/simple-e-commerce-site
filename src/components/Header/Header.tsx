@@ -2,16 +2,25 @@ import React, { useState } from "react";
 import { IoCartOutline, IoMenuOutline, IoPersonOutline } from "react-icons/io5";
 import { navElements } from "../utils/navElements";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { selectCartItems } from "../../redux/cartSlice";
 
 const Header = () => {
+  const cartItems = useSelector((state: RootState) => selectCartItems(state));
+  // const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+
   return (
     <div className='w-full h-fit rounded flex gap-2'>
-      <button className='p-3 text-[15px] w-fit rounded bg-white text-black flex gap-4 items-center'>
-        <p className='lg:block hidden'>Cart (0)</p>
+      <a
+        href='/cart'
+        className='p-3 text-[15px] w-fit rounded bg-white text-black flex gap-4 items-center'
+      >
+        <p className='lg:block hidden'>Cart ({cartItems.length})</p>
         <div className='p-2 bg-gray-200 rounded'>
           <IoCartOutline className='text-[18px] font-light' />
         </div>
-      </button>
+      </a>
       <div className='p-3 text-[15px] flex-1 rounded bg-white text-black flex justify-center md:justify-between gap-4 items-center'>
         <a href='/' className='font-bold'>
           REVELOFFICE

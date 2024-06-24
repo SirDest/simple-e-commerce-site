@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { Product } from "../../types";
 import { fetchProducts } from "../../api/apiService";
+import { useDispatch } from "react-redux";
+import { addtocart } from "../../redux/cartSlice";
 
 const Landing = () => {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,6 +31,7 @@ const Landing = () => {
 
     getProducts();
   }, []);
+
   return (
     <>
       {error ? (
@@ -66,7 +70,20 @@ const Landing = () => {
                         <div>
                           <p>{price} USD</p>
                         </div>
-                        <button className='p-2 bg-gray-200 cursor-pointer hover:bg-gray-400 ease-in-out duration-500 rounded'>
+                        <button
+                          onClick={() =>
+                            dispatch(
+                              addtocart({
+                                id,
+                                title,
+                                price,
+                                image,
+                                quantity: 1,
+                              })
+                            )
+                          }
+                          className='p-2 bg-gray-200 cursor-pointer hover:bg-gray-400 ease-in-out duration-500 rounded'
+                        >
                           <IoCartOutline className='text-[15px] text-gray-700 font-light' />
                         </button>
                       </div>
