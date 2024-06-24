@@ -1,8 +1,13 @@
 import React from "react";
 import Breadcrumbs from "../../Breadcrumbs";
 import MenCard from "./MenCard";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { selectCartItems } from "../../../redux/cartSlice";
 
 const Men = () => {
+  const cartItems = useSelector((state: RootState) => selectCartItems(state));
+
   return (
     <>
       <div className='w-full h-fit p-7 bg-white text-black rounded flex flex-col'>
@@ -19,6 +24,12 @@ const Men = () => {
           <p className='text-black text-[13px] flex font-normal items-center gap-1'>
             All Men Products
           </p>
+          <a
+            href='/cart'
+            className='p-3 text-[13px] w-fit rounded bg-white text-black flex gap-4 items-center'
+          >
+            Cart ({cartItems.length})
+          </a>
         </div>
       </div>
       <MenCard />

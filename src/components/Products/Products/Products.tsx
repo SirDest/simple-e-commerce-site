@@ -1,7 +1,6 @@
 import React from "react";
 import Breadcrumbs from "../../Breadcrumbs";
 import ProductCard from "./ProductCard";
-import { IoCartOutline } from "react-icons/io5";
 import { RootState } from "../../../redux/store";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../../redux/cartSlice";
@@ -28,7 +27,7 @@ const Products = () => {
           </p>
           <a
             href='/cart'
-            className='p-3 text-[15px] w-fit rounded bg-white text-black flex gap-4 items-center'
+            className='p-3 text-[13px] w-fit rounded bg-white text-black flex gap-4 items-center'
           >
             Cart ({cartItems.length})
           </a>

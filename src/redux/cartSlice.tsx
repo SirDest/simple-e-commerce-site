@@ -31,7 +31,6 @@ const cartSlice = createSlice({
           quantity: 1,
         });
       }
-
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
   },
