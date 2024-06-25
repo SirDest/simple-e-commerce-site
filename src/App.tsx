@@ -7,7 +7,7 @@ import Products from "./components/Products/Products/Products";
 import Women from "./components/Products/Women/Women";
 import Jewelries from "./components/Products/Jewelries/Jewelries";
 import Electronics from "./components/Products/Electronics/Electronics";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 

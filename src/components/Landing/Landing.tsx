@@ -53,7 +53,7 @@ const Landing = () => {
                     className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group overflow-hidden'
                   >
                     <div
-                      className='w-full flex-1 border-b relative'
+                      className='w-full flex-1 border-b'
                       style={{
                         backgroundImage: `url(${image})`,
                         backgroundSize: "cover",
