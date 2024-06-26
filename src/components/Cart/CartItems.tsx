@@ -1,12 +1,28 @@
 import React from "react";
 import { IoTrashOutline } from "react-icons/io5";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { selectCartItems } from "../../redux/cartSlice";
+import {
+  decrementQuantity,
+  incrementQuantity,
+  removeItem,
+  selectCartItems,
+} from "../../redux/cartSlice";
 
 const CartItems = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
-  console.log("cartItems", cartItems);
+  const handleIncrement = (id: number) => {
+    dispatch(incrementQuantity(id));
+  };
+
+  const handleDecrement = (id: number) => {
+    dispatch(decrementQuantity(id));
+  };
+
+  const deleteProduct = (id: number) => {
+    dispatch(removeItem(id));
+  };
 
   return (
     <div className='w-full h-fit flex flex-col gap-2 rounded'>
@@ -14,7 +30,7 @@ const CartItems = () => {
       {cartItems.map(({ id, image, quantity, title, price }) => (
         <div
           key={id}
-          className='w-full h-[90px] rounded p-1 md:p-3 flex justify-center items-center bg-white gap-3 text-[13px] md:text-[17px]'
+          className='w-full h-[90px] border-none hover:bg-gray-300 rounded p-1 md:p-3 flex justify-center items-center bg-white gap-3 text-[13px] md:text-[17px]'
         >
           <div
             className='min-w-[80px] w-[80px] h-full'
@@ -31,26 +47,42 @@ const CartItems = () => {
             <div className='h-1/2 border-b border-gray-200'>
               <p>{title}</p>
             </div>
-
             <div className='flex items-center w-full h-1/2 justify-between'>
               <div className='w-1/2 h-full flex items-center'>
-                <p>$ {price}</p>
+                <p>$ {price.toFixed(2)}</p>
               </div>
 
               <div className='w-1/2 h-full flex gap-2 items-center'>
-                <button>-</button>
+                <button
+                  onClick={() => {
+                    handleDecrement(id);
+                  }}
+                >
+                  -
+                </button>
                 <p>{quantity}</p>
-                <button>+</button>
+                <button
+                  onClick={() => {
+                    handleIncrement(id);
+                  }}
+                >
+                  +
+                </button>
               </div>
               <div className='w-1/2 h-full flex items-center'>
                 <p>
-                  $ <span className='font-bold'>{price * quantity}</span>
+                  ${" "}
+                  <span className='font-bold'>
+                    {(price * quantity).toFixed(2)}
+                  </span>
                 </p>
               </div>
             </div>
           </div>
-
-          <button className='p-2 bg-gray-200 hover:bg-gray-400 duration-300 ease-in-out rounded flex items-center h-fit'>
+          <button
+            onClick={() => deleteProduct(id)}
+            className='p-2 bg-gray-200 hover:bg-gray-400 duration-300 ease-in-out rounded flex items-center h-fit'
+          >
             <IoTrashOutline className='text-[18px] font-light' />
           </button>
         </div>

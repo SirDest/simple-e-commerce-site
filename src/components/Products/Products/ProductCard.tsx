@@ -44,7 +44,7 @@ const ProductCard = () => {
                 ({ id, title, category, description, image, price }) => (
                   <div
                     key={id}
-                    className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group overflow-hidden'
+                    className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
                   >
                     <div
                       className='w-full flex-1 border-b relative'
