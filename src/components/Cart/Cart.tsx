@@ -10,13 +10,15 @@ const Cart = () => {
 
   return (
     <>
-      <div className='w-full h-fit p-7 bg-white text-black rounded flex flex-col '>
+      <div className="w-full h-fit p-7 bg-white text-black rounded flex flex-col ">
         <Breadcrumbs />
-        <div className='flex justify-between items-center w-full h-fit py-4 border-b border-gray-300'>
-          <h1 className='text-black md:text-[40px] text-[28px] font-normal'>
+        <div className="flex justify-between items-center w-full h-fit py-4 border-b border-gray-300">
+          <h1 className="text-black md:text-[40px] text-[28px] font-normal">
             Shopping Cart
           </h1>
-          <p className='text-[13px]'>{cartItems.length} items</p>
+          <p className="text-[13px]">
+            Total: <span className="font-bold">{cartItems.length}</span>
+          </p>
         </div>
       </div>
       <CartItems />
