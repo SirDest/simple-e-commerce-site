@@ -34,13 +34,18 @@ const CartItems = () => {
 
             <div className='flex items-center w-full h-1/2 justify-between'>
               <div className='w-1/2 h-full flex items-center'>
-                <p>{price}</p>
+                <p>$ {price}</p>
               </div>
 
               <div className='w-1/2 h-full flex gap-2 items-center'>
                 <button>-</button>
                 <p>{quantity}</p>
                 <button>+</button>
+              </div>
+              <div className='w-1/2 h-full flex items-center'>
+                <p>
+                  $ <span className='font-bold'>{price * quantity}</span>
+                </p>
               </div>
             </div>
           </div>
