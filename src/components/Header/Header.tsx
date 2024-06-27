@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoCartOutline, IoMenuOutline, IoPersonOutline } from "react-icons/io5";
 import { navElements } from "../utils/navElements";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { selectCartItems } from "../../redux/cartSlice";
 
-const Header = () => {
+const Header: React.FC = () => {
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
   // const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 

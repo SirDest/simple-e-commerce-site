@@ -5,9 +5,8 @@ import { RootState } from "../../../redux/store";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../../redux/cartSlice";
 
-const Products = () => {
+const Products: React.FC = () => {
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
-  // const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
   return (
     <>
