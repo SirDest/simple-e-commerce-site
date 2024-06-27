@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <Provider store={store}>
-        <div className='bg-gray-200 w-full h-fit min-h-[630px] py-2 px-4 flex flex-col gap-10'>
+        <div className='bg-gray-200 w-full h-screen min-h-[630px] py-2 px-4 flex flex-col gap-10'>
           <Routes>
             <Route path='/' element={<HomePage />} />
             {<Route path='/products' element={<Products />} />}

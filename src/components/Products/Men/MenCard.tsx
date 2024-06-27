@@ -4,6 +4,8 @@ import { Product } from "../../../types";
 import { fetchMenProducts } from "../../../api/apiService";
 import { useDispatch } from "react-redux";
 import { addtocart } from "../../../redux/cartSlice";
+import { ClipLoader } from "react-spinners";
+import { generateClassName } from "../../utils/tailwind";
 
 const MenCard = () => {
   const dispatch = useDispatch();
@@ -25,17 +27,31 @@ const MenCard = () => {
 
     getProducts();
   }, []);
+
+  const errorStyle = ["md:text-[17px]", "text-[14px]"];
+
   return (
     <>
       {error ? (
-        <div className='flex text-[20px] text-center justify-center py-3'>
-          <p>Error loading page... Try again later!</p>
+        <div className='flex flex-col text-center justify-center py-3'>
+          <p className='md:text-[21px] lg:text-[24px] text-[15px] py-2 font-bold'>
+            Failed to load this section!
+          </p>
+          <p className={generateClassName(errorStyle)}>
+            Looks like there is a problem with the internet connection,
+          </p>
+          <p className={generateClassName(errorStyle)}>
+            please reload the page or try again.
+          </p>
         </div>
       ) : (
         <div>
           {loading ? (
-            <div className='flex text-[20px] text-center justify-center py-3'>
-              <p>Loading Products... Please wait...</p>
+            <div className='flex flex-col gap-2 text-[15px] md:text-[20px] text-center justify-center py-3'>
+              <div className='m-auto flex items-center w-fit'>
+                <ClipLoader />
+              </div>
+              <p>Please Wait...</p>
             </div>
           ) : (
             <div className='w-full h-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2'>
