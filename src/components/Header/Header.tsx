@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoCartOutline, IoMenuOutline, IoPersonOutline } from "react-icons/io5";
 import { navElements } from "../utils/navElements";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { selectCartItems } from "../../redux/cartSlice";
+import HeaderDropDown from "./HeaderDropDown";
 
 const Header: React.FC = () => {
+  const [sideBar, setSideBar] = useState<boolean>(false);
+
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
   // const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
+  const handleSideBar = () => {
+    setSideBar((prevState) => !prevState);
+  };
   return (
     <div className='w-full h-fit rounded flex gap-2'>
       <a
@@ -43,11 +49,22 @@ const Header: React.FC = () => {
           <IoPersonOutline className='text-[18px] text-white font-light' />
         </div>
       </button>
-      <button className='p-3 text-[15px] w-fit rounded  bg-white text-black flex md:hidden gap-4 items-center'>
+      <button
+        onClick={handleSideBar}
+        className='p-3 text-[15px] w-fit rounded  bg-white text-black flex md:hidden gap-4 items-center'
+      >
         <div className='p-2 bg-gray-200 rounded'>
           <IoMenuOutline className='text-[18px] text-black font-light' />
         </div>
       </button>
+      <div
+        style={{
+          display: !sideBar ? "none" : "flex",
+        }}
+        className='fixed z-10 top-0 left-0 w-full h-fit md:none flex'
+      >
+        <HeaderDropDown setSideBar={setSideBar} />
+      </div>
     </div>
   );
 };
