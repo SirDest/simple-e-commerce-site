@@ -1,6 +1,5 @@
-import React, { SetStateAction } from "react";
+import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
-import { Dispatch } from "redux";
 import { navElements } from "../utils/navElements";
 
 interface MyComponentProps {

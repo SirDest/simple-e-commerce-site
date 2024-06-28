@@ -13,6 +13,7 @@ import EmptyCart from "./EmptyCart";
 const CartItems: React.FC = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
+
   const handleIncrement = (id: number) => {
     dispatch(incrementQuantity(id));
   };
