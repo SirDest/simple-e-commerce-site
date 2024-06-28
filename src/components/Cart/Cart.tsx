@@ -17,7 +17,7 @@ const Cart = () => {
         <Breadcrumbs />
         <div className='flex justify-between items-center w-full h-fit py-4 border-b border-gray-300'>
           <h1 className='text-black md:text-[40px] text-[28px] font-normal'>
-            Shopping Cart
+            Cart
           </h1>
           <p className='text-[13px]'>
             <span className='font-bold'>{cartItems.length} items</span>

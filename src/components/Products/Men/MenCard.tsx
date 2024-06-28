@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IoCartOutline } from "react-icons/io5";
 import { Product } from "../../../types";
 import { fetchMenProducts } from "../../../api/apiService";
-import { useDispatch } from "react-redux";
-import { addtocart } from "../../../redux/cartSlice";
 import ErrorPage from "../../ErrorPage";
 import Loading from "../../Loading";
 import Card from "../Card";
 
 const MenCard: React.FC = () => {
-  const dispatch = useDispatch();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,6 +38,7 @@ const MenCard: React.FC = () => {
               {products.map(
                 ({ id, title, category, description, image, price }) => (
                   <Card
+                    key={id}
                     id={id}
                     title={title}
                     price={price}

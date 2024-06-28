@@ -10,6 +10,7 @@ import Electronics from "./components/Products/Electronics/Electronics";
 import Cart from "./components/Cart/Cart";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ProductDetails from "./components/Products/ProductDetails";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             {<Route path='/jewelries' element={<Jewelries />} />}
             {<Route path='/electronics' element={<Electronics />} />}
             {<Route path='/cart' element={<Cart />} />}
+            {<Route path='/product/:id' Component={ProductDetails} />}
           </Routes>
         </div>
       </Provider>

@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IoCartOutline } from "react-icons/io5";
 import { Product } from "../../../types";
 import { fetchWomenProducts } from "../../../api/apiService";
-import { useDispatch } from "react-redux";
-import { addtocart } from "../../../redux/cartSlice";
 import { ClipLoader } from "react-spinners";
 import { generateClassName } from "../../utils/tailwind";
 import Card from "../Card";
 
 const WomenCard = () => {
-  const dispatch = useDispatch();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

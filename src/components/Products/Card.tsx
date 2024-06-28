@@ -15,7 +15,8 @@ const Card: React.FC<Product> = ({
   const dispatch = useDispatch();
 
   return (
-    <div
+    <a
+      href={`/product/${id}`}
       key={id}
       className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
     >
@@ -55,7 +56,7 @@ const Card: React.FC<Product> = ({
           </button>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
