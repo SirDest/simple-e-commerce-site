@@ -19,10 +19,8 @@ const cartSlice = createSlice({
       const existingItem = state.cart.find((item) => item.id === id);
 
       if (existingItem) {
-        // If item already exists in cart, increment quantity
         existingItem.quantity++;
       } else {
-        // If item is not in cart, add it with quantity of 1
         state.cart.push({
           id,
           title,
@@ -62,7 +60,6 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const { removeItem, incrementQuantity, decrementQuantity } =
+export const { removeItem, incrementQuantity, decrementQuantity, addtocart } =
   cartSlice.actions;
 export const selectCartItems = (state: RootState) => state.cart.cart;
-export const { addtocart } = cartSlice.actions;

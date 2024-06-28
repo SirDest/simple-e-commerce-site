@@ -21,7 +21,7 @@ const Card: React.FC<Product> = ({
       className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
     >
       <div
-        className='w-full flex-1 border-b relative'
+        className='w-full flex-1 relative'
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
@@ -36,7 +36,7 @@ const Card: React.FC<Product> = ({
         </p>
         <div className='flex justify-between text-[13px] text-gray-700'>
           <div>
-            <p>{price} USD</p>
+            <p>${price}</p>
           </div>
           <button
             onClick={() =>
