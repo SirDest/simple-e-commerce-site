@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import Landing from "./Landing";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <Header />

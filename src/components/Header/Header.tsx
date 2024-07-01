@@ -11,7 +11,6 @@ const Header: React.FC = () => {
   const [sideBar, setSideBar] = useState<boolean>(false);
 
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
-  // const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
   const handleSideBar = () => {
     setSideBar((prevState) => !prevState);
@@ -29,7 +28,7 @@ const Header: React.FC = () => {
       </a>
       <div className='p-3 text-[15px] flex-1 rounded bg-white text-black flex justify-center md:justify-between gap-4 items-center'>
         <a href='/' className='font-bold'>
-          REVELOFFICE
+          DESTINED
         </a>
         <ul className='md:flex hidden text-[15px] items-center lg:gap-10 gap-6'>
           {navElements.map(({ name, link }) => (

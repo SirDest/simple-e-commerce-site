@@ -8,7 +8,7 @@ import { selectCartItems } from "../../redux/cartSlice";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 
-const ProductDetails = () => {
+const ProductDetails: React.FC = () => {
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
@@ -78,7 +78,6 @@ const ProductDetails = () => {
           <p className='text-[18px]'>
             $<span className='font-semibold text-[22px]'>{product.price}</span>
           </p>
-
           <h1 className='text-[20px] font-semibold'>{product.title}</h1>
           <p className='first-letter:capitalize text-[16px]'>
             {product.description}
