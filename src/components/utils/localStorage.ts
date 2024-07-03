@@ -4,7 +4,6 @@ export const getItemFromLocalStorage = <T>(key: string): T | null => {
     try {
       return JSON.parse(item) as T;
     } catch (error) {
-      console.error("Couldn't get Cart... Try refreshing the page", error);
       return null;
     }
   }
