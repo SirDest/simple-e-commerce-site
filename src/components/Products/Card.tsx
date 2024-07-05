@@ -14,6 +14,22 @@ const Card: React.FC<Product> = ({
 }) => {
   const dispatch = useDispatch();
 
+  const handleCartClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.stopPropagation(); // Prevent the event from bubbling up to the parent anchor tag
+    e.preventDefault(); // Prevent the default anchor tag behavior
+    dispatch(
+      addtocart({
+        id,
+        title,
+        price,
+        image,
+        quantity: 1,
+      })
+    );
+  };
+
   return (
     <a
       href={`/product/${id}`}
@@ -39,17 +55,7 @@ const Card: React.FC<Product> = ({
             <p>${price}</p>
           </div>
           <button
-            onClick={() =>
-              dispatch(
-                addtocart({
-                  id,
-                  title,
-                  price,
-                  image,
-                  quantity: 1,
-                })
-              )
-            }
+            onClick={handleCartClick}
             className='p-2 bg-gray-200 cursor-pointer z-10 hover:bg-gray-400 ease-in-out duration-500 rounded'
           >
             <IoCartOutline className='text-[15px] text-gray-700 font-light' />
