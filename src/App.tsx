@@ -11,6 +11,8 @@ import Cart from "./components/Cart/Cart";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ProductDetails from "./components/Products/ProductDetails";
+import "react-toastify/dist/ReactToastify.css";
+import { Slide, ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -27,6 +29,13 @@ function App() {
             {<Route path='/cart' element={<Cart />} />}
             {<Route path='/product/:id' Component={ProductDetails} />}
           </Routes>
+          <ToastContainer
+            hideProgressBar
+            pauseOnHover
+            transition={Slide}
+            newestOnTop
+            autoClose={3000}
+          />
         </div>
       </Provider>
     </Router>

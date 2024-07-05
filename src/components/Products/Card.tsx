@@ -3,6 +3,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { addtocart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Product } from "../../types";
+import { toast } from "react-toastify";
 
 const Card: React.FC<Product> = ({
   id,
@@ -17,8 +18,9 @@ const Card: React.FC<Product> = ({
   const handleCartClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    e.stopPropagation(); // Prevent the event from bubbling up to the parent anchor tag
-    e.preventDefault(); // Prevent the default anchor tag behavior
+    e.stopPropagation();
+    e.preventDefault();
+    toast("Added to cart");
     dispatch(
       addtocart({
         id,

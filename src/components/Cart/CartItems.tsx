@@ -9,6 +9,7 @@ import {
   selectCartItems,
 } from "../../redux/cartSlice";
 import EmptyCart from "./EmptyCart";
+import { toast } from "react-toastify";
 
 const CartItems: React.FC = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const CartItems: React.FC = () => {
   };
 
   const deleteProduct = (id: number) => {
+    toast("Product deleted from cart");
     dispatch(removeItem(id));
   };
 

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { selectCartItems } from "../../redux/cartSlice";
 import HeaderDropDown from "./HeaderDropDown";
+import { toast } from "react-toastify";
 
 const Header: React.FC = () => {
   const [sideBar, setSideBar] = useState<boolean>(false);
@@ -14,6 +15,10 @@ const Header: React.FC = () => {
 
   const handleSideBar = () => {
     setSideBar((prevState) => !prevState);
+  };
+
+  const notify = () => {
+    toast("Page currently unavailiable");
   };
   return (
     <div className='w-full h-fit rounded flex gap-2'>
@@ -42,7 +47,10 @@ const Header: React.FC = () => {
           ))}
         </ul>
       </div>
-      <button className='p-3 text-[15px] w-fit rounded bg-gray-700 text-white hidden md:flex gap-4 items-center'>
+      <button
+        onClick={notify}
+        className='p-3 text-[15px] w-fit rounded bg-gray-700 text-white hidden md:flex gap-4 items-center'
+      >
         <p className='lg:block hidden'>Create Account</p>
         <div className='p-2 bg-gray-500 rounded'>
           <IoPersonOutline className='text-[18px] text-white font-light' />

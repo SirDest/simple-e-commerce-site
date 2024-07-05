@@ -4,6 +4,7 @@ import { fetchWomenProducts } from "../../../api/apiService";
 import { ClipLoader } from "react-spinners";
 import { generateClassName } from "../../utils/tailwind";
 import Card from "../Card";
+import { ToastContainer } from "react-toastify";
 
 const WomenCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,6 +30,7 @@ const WomenCard = () => {
 
   return (
     <>
+      {/* <ToastContainer /> */}
       {error ? (
         <div className='flex flex-col text-center justify-center py-3'>
           <p className='md:text-[21px] lg:text-[24px] text-[15px] py-2 font-bold'>
