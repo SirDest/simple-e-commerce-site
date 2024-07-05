@@ -18,7 +18,7 @@ const Card: React.FC<Product> = ({
     <a
       href={`/product/${id}`}
       key={id}
-      className='h-[320px] rounded flex flex-col bg-white gap-3 hover:scale-110 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
+      className='h-[320px] rounded flex flex-col bg-white gap-3 hover:bg-gray-100 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
     >
       <div
         className='w-full flex-1 relative'
@@ -50,7 +50,7 @@ const Card: React.FC<Product> = ({
                 })
               )
             }
-            className='p-2 bg-gray-200 cursor-pointer hover:bg-gray-400 ease-in-out duration-500 rounded'
+            className='p-2 bg-gray-200 cursor-pointer z-10 hover:bg-gray-400 ease-in-out duration-500 rounded'
           >
             <IoCartOutline className='text-[15px] text-gray-700 font-light' />
           </button>
