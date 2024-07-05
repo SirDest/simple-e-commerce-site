@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
             Random Products
           </p>
           <a
-            href='/products'
+            href='/product'
             className='text-gray-400 hover:text-blue-500 cursor-pointer text-[13px] flex font-normal items-center gap-1'
           >
             View all products
