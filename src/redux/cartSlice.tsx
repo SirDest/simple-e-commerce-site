@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { CartItem } from "../types";
+import { toast } from "react-toastify";
 
 interface CartState {
   cart: CartItem[];
@@ -19,8 +20,10 @@ const cartSlice = createSlice({
       const existingItem = state.cart.find((item) => item.id === id);
 
       if (existingItem) {
+        toast("Product already in your cart");
         existingItem.quantity++;
       } else {
+        toast("Added to cart");
         state.cart.push({
           id,
           title,
@@ -35,6 +38,7 @@ const cartSlice = createSlice({
     removeItem: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload);
       localStorage.setItem("cart", JSON.stringify(state.cart));
+      toast("Product deleted from cart");
     },
 
     incrementQuantity: (state, action: PayloadAction<number>) => {

@@ -24,8 +24,9 @@ const CartItems: React.FC = () => {
   };
 
   const deleteProduct = (id: number) => {
-    toast("Product deleted from cart");
     dispatch(removeItem(id));
+    cartItems.length <= 1 &&
+      toast(`Your cart is now empty`, { theme: "dark", autoClose: 5000 });
   };
 
   return (

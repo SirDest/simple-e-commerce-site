@@ -20,7 +20,6 @@ const Card: React.FC<Product> = ({
   ) => {
     e.stopPropagation();
     e.preventDefault();
-    toast("Added to cart");
     dispatch(
       addtocart({
         id,
