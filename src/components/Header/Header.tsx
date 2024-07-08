@@ -26,10 +26,12 @@ const Header: React.FC = () => {
         href='/cart'
         className='p-3 text-[15px] w-fit rounded bg-white text-black flex gap-4 items-center'
       >
-        <p className='lg:block hidden'>Cart ({cartItems.length})</p>
         <div className='p-2 bg-gray-200 rounded'>
           <IoCartOutline className='text-[18px] font-light' />
         </div>
+        <p className='flex'>
+          <span className='lg:block hidden'>Cart</span> ({cartItems.length})
+        </p>
       </a>
       <div className='p-3 text-[15px] flex-1 rounded bg-white text-black flex justify-center md:justify-between gap-4 items-center'>
         <a href='/' className='font-bold'>

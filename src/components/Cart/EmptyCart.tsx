@@ -18,13 +18,13 @@ const EmptyCart: React.FC = () => {
       <div className='w-fit p-3 flex gap-5'>
         <a
           href='/'
-          className='text-gray-400 hover:text-blue-500 cursor-pointer text-[13px] flex font-normal items-center'
+          className='text-blue-400 hover:text-blue-600 cursor-pointer text-[13px] flex font-normal items-center'
         >
           Go Home
         </a>
         <a
-          href='/products'
-          className='text-gray-400 hover:text-blue-500 cursor-pointer text-[13px] flex font-normal items-center'
+          href='/product'
+          className='text-blue-400 hover:text-blue-600 cursor-pointer text-[13px] flex font-normal items-center'
         >
           View all products
         </a>
