@@ -34,7 +34,7 @@ const JewelriesCard: React.FC = () => {
           {loading ? (
             <Loading />
           ) : (
-            <div className='w-full h-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2'>
+            <div className='w-full h-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2'>
               {products.map(
                 ({ id, title, category, description, image, price }) => (
                   <Card

@@ -6,7 +6,7 @@ interface MyComponentProps {
   setSideBar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const HeaderDropDown: React.FC<MyComponentProps> = ({ setSideBar }) => {
+const HeaderDropDown = ({ setSideBar }: MyComponentProps) => {
   const handleSideBar = () => {
     setSideBar((prevState) => !prevState);
   };

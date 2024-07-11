@@ -3,7 +3,6 @@ import { IoCartOutline } from "react-icons/io5";
 import { addtocart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Product } from "../../types";
-import { toast } from "react-toastify";
 
 const Card: React.FC<Product> = ({
   id,
@@ -35,7 +34,7 @@ const Card: React.FC<Product> = ({
     <a
       href={`/product/${id}`}
       key={id}
-      className='h-[320px] rounded flex flex-col bg-white gap-3 hover:bg-gray-100 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
+      className='lg:h-[540px] md:h-[400px] h-[320px] rounded flex flex-col bg-white gap-3 hover:bg-gray-100 ease-in-out duration-300 px-6 py-2 cursor-pointer group hover:border hover:border-gray-200'
     >
       <div
         className='w-full flex-1 relative'
