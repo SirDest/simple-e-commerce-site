@@ -8,6 +8,7 @@ import { addtocart, selectCartItems } from "../../redux/cartSlice";
 import { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCartOutline } from "react-icons/io5";
+import OtherProducts from "./OtherProducts";
 
 const ProductDetails: React.FC = () => {
   const dispatch = useDispatch();
@@ -72,7 +73,7 @@ const ProductDetails: React.FC = () => {
   }
 
   return (
-    <div className='w-full h-screen'>
+    <div className='w-full h-fit'>
       <div className='bg-white rounded'>
         <div className='w-full h-fit p-7 bg-white text-black rounded flex flex-col'>
           <Breadcrumbs />
@@ -89,7 +90,7 @@ const ProductDetails: React.FC = () => {
       <div className='flex flex-col lg:flex-row gap-10 justify-between w-full h-fit text-[18px] font-normal mt-4 rounded bg-white p-7'>
         <div className='flex-1 justify-center'>
           <div
-            className='h-[340px] md:w-[470px] w-full m-auto'
+            className='h-[420px] md:w-[290px] w-full m-auto'
             style={{
               backgroundImage: `url(${product.image})`,
               backgroundSize: "cover",
@@ -100,7 +101,7 @@ const ProductDetails: React.FC = () => {
             {/* <img src={product.image} alt={product.title} /> */}
           </div>
         </div>
-        <div className='wfull m-auto md:w-[480px] h-fit bg-gray-200 p-[20px] rounded'>
+        <div className='w-full m-auto lg:w-[480px] h-fit bg-gray-200 p-[20px] rounded'>
           <div className='flex flex-col gap-3 p-[20px] bg-white rounded'>
             <h1 className='md:text-[20px] text-[15px] font-semibold'>
               {product.title}
@@ -130,6 +131,12 @@ const ProductDetails: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='w-full h-fit mt-4 rounded bg-white p-7'>
+        <p className='text-black text-[20px] font-normal pb-4 border-b border-gray-300'>
+          Other products for you
+        </p>
+        <OtherProducts />
       </div>
     </div>
   );
