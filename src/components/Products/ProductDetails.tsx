@@ -86,23 +86,27 @@ const ProductDetails: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col md:flex-row gap-10 justify-center w-full h-fit text-[18px] font-normal mt-4 rounded bg-white p-7'>
-        <div
-          className='h-fit md:w-[750px] w-full'
-          style={{
-            backgroundImage: `url(${product.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          {/* <img src={product.image} alt={product.title} /> */}
+      <div className='flex flex-col lg:flex-row gap-10 justify-between w-full h-fit text-[18px] font-normal mt-4 rounded bg-white p-7'>
+        <div className='flex-1 justify-center'>
+          <div
+            className='h-[340px] md:w-[470px] w-full m-auto'
+            style={{
+              backgroundImage: `url(${product.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* <img src={product.image} alt={product.title} /> */}
+          </div>
         </div>
-        <div className='w-[480px] h-fit bg-gray-200 p-[20px] rounded'>
+        <div className='wfull m-auto md:w-[480px] h-fit bg-gray-200 p-[20px] rounded'>
           <div className='flex flex-col gap-3 p-[20px] bg-white rounded'>
-            <h1 className='text-[20px] font-semibold'>{product.title}</h1>
-            <p className='text-[18px]'>${product.price}</p>
-            <p className='first-letter:capitalize text-[14px] leading-[24px] text-gray-500'>
+            <h1 className='md:text-[20px] text-[15px] font-semibold'>
+              {product.title}
+            </h1>
+            <p className='md:text-[18px] text-[15px]'>${product.price}</p>
+            <p className='first-letter:capitalize md:text-[14px] text-[13px] leading-[24px] text-gray-500'>
               {product.description}
             </p>
             <div className='flex w-full h-fit justify-between items-center'>
@@ -116,11 +120,11 @@ const ProductDetails: React.FC = () => {
               </div>
               <button
                 onClick={handleCartClick}
-                className='p-[20px] bg-black text-[15px] text-white font-light cursor-pointer z-10 hover:bg-gray-900 ease-in-out duration-500 rounded flex w-fit items-center gap-[24px]'
+                className='md:p-[20px] p-[13px] bg-black md:text-[15px] text-[13px]  text-white font-light cursor-pointer z-10 hover:bg-gray-900 ease-in-out duration-500 rounded flex w-fit items-center gap-[24px]'
               >
                 Add to Cart
                 <div className='p-2 bg-gray-500 rounded'>
-                  <IoCartOutline className='text-[18px] text-white font-light' />
+                  <IoCartOutline className='md:text-[18px] text-[15px] text-white font-light' />
                 </div>
               </button>
             </div>
