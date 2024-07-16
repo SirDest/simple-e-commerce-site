@@ -15,15 +15,22 @@ const CartItems: React.FC = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
 
-  const handleIncrement = (id: number) => {
+  const handleIncrement = (e: React.MouseEvent, id: number) => {
+    e.stopPropagation();
+    e.preventDefault();
+
     dispatch(incrementQuantity(id));
   };
 
-  const handleDecrement = (id: number) => {
+  const handleDecrement = (e: React.MouseEvent, id: number) => {
+    e.stopPropagation();
+    e.preventDefault();
     dispatch(decrementQuantity(id));
   };
 
-  const deleteProduct = (id: number) => {
+  const deleteProduct = (e: React.MouseEvent, id: number) => {
+    e.preventDefault();
+    e.stopPropagation();
     dispatch(removeItem(id));
     cartItems.length <= 1 &&
       toast(`Your cart is now empty`, { theme: "dark", autoClose: 5000 });
@@ -36,7 +43,8 @@ const CartItems: React.FC = () => {
       ) : (
         <div className='w-full h-fit flex flex-col gap-2 rounded'>
           {cartItems.map(({ id, image, quantity, title, price }) => (
-            <div
+            <a
+              href={`/product/${id}`}
               key={id}
               className='w-full h-[90px] border-none hover:bg-gray-300 rounded p-1 md:p-3 flex justify-center items-center bg-white gap-3 text-[13px] md:text-[17px]'
             >
@@ -62,16 +70,16 @@ const CartItems: React.FC = () => {
 
                   <div className='w-1/2 h-full flex gap-2 items-center'>
                     <button
-                      onClick={() => {
-                        handleDecrement(id);
+                      onClick={(e) => {
+                        handleDecrement(e, id);
                       }}
                     >
                       -
                     </button>
                     <p>{quantity}</p>
                     <button
-                      onClick={() => {
-                        handleIncrement(id);
+                      onClick={(e) => {
+                        handleIncrement(e, id);
                       }}
                     >
                       +
@@ -79,7 +87,7 @@ const CartItems: React.FC = () => {
                   </div>
                   <div className='w-1/2 h-full flex items-center'>
                     <p>
-                      ${" "}
+                      $
                       <span className='font-bold'>
                         {(price * quantity).toFixed(2)}
                       </span>
@@ -88,12 +96,12 @@ const CartItems: React.FC = () => {
                 </div>
               </div>
               <button
-                onClick={() => deleteProduct(id)}
+                onClick={(e) => deleteProduct(e, id)}
                 className='p-2 bg-gray-200 hover:bg-gray-400 duration-300 ease-in-out rounded flex items-center h-fit'
               >
                 <IoTrashOutline className='text-[18px] font-light' />
               </button>
-            </div>
+            </a>
           ))}
         </div>
       )}

@@ -112,7 +112,7 @@ const ProductDetails: React.FC = () => {
             </p>
             <div className='flex w-full h-fit justify-between items-center'>
               <div className='flex items-center gap-3'>
-                <p className='text-[15px]'>QTY</p>
+                <p className='md:text-[15px] text-[13px]'>QTY</p>
                 <div className='w-fit h-full flex gap-2 items-center'>
                   <button onClick={decreaseQty}>-</button>
                   <p className='border border-gray-300 px-3 py-1'>{itemQty}</p>
@@ -121,7 +121,7 @@ const ProductDetails: React.FC = () => {
               </div>
               <button
                 onClick={handleCartClick}
-                className='md:p-[20px] p-[13px] bg-black md:text-[15px] text-[13px]  text-white font-light cursor-pointer z-10 hover:bg-gray-900 ease-in-out duration-500 rounded flex w-fit items-center gap-[24px]'
+                className='md:p-[20px] p-[13px] bg-black md:text-[15px] text-[13px] text-white font-light cursor-pointer z-10 hover:bg-gray-900 ease-in-out duration-500 rounded flex w-fit items-center gap-[24px]'
               >
                 Add to Cart
                 <div className='p-2 bg-gray-500 rounded'>
