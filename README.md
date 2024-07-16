@@ -8,7 +8,6 @@ Live Link: <a href="https://destined-ecommerce-site.vercel.app/">here</a>
 
 - Product listing with images and descriptions
 - Shopping cart functionality
-- Checkout process (if implemented)
 - Responsive Design
 
 
