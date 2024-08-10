@@ -1,7 +1,7 @@
 # Simple eCommerce website
 
 A basic eCommerce website built with React and TypeScript, featuring product listings and basic shopping cart functionality.
-Live Link: <a href="https://destined-ecommerce-site.vercel.app/">here</a>
+Live link: <a href="https://destined-ecommerce-site.vercel.app/">here</a>
 
 
 ## Features
