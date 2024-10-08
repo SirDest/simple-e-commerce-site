@@ -12,7 +12,7 @@ import OtherProducts from "./OtherProducts";
 
 const ProductDetails: React.FC = () => {
   const dispatch = useDispatch();
-  // const cartItems = useSelector((state: RootState) => selectCartItems(state));
+  const cartItems = useSelector((state: RootState) => selectCartItems(state));
   const { id } = useParams<{ id: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -42,7 +42,7 @@ const ProductDetails: React.FC = () => {
   };
 
   const decreaseQty = () => {
-    itemQty >= 1 && setItemQty(itemQty - 1);
+    itemQty > 1 && setItemQty(itemQty - 1);
   };
 
   const handleCartClick = (
@@ -76,7 +76,15 @@ const ProductDetails: React.FC = () => {
     <div className='w-full h-fit'>
       <div className='bg-white rounded'>
         <div className='w-full h-fit p-7 bg-white text-black rounded flex flex-col'>
-          <Breadcrumbs />
+          <div className='flex flex-row justify-between'>
+            <Breadcrumbs />
+            <a
+              href='/cart'
+              className='p-3 text-[15px] w-fit rounded bg-white text-blue-600 flex gap-2 items-center'
+            >
+              Cart <span className='text-black'>( {cartItems.length} )</span>
+            </a>
+          </div>
           <div className='flex flex-col md:flex-row justify-between w-full h-fit py-4 border-b border-gray-300'>
             <h1 className='text-black text-[40px] font-normal'>Product</h1>
             <p className='text-[13px] md:w-[400px]'>
@@ -110,8 +118,8 @@ const ProductDetails: React.FC = () => {
             <p className='first-letter:capitalize md:text-[14px] text-[13px] leading-[24px] text-gray-500'>
               {product.description}
             </p>
-            <div className='flex w-full h-fit justify-between items-center'>
-              <div className='flex items-center gap-3'>
+            <div className='flex md:flex-row flex-col gap-3 w-full h-fit md:justify-between justify-start items-center'>
+              <div className='flex items-center gap-3 justify-start'>
                 <p className='md:text-[15px] text-[13px]'>QTY</p>
                 <div className='w-fit h-full flex gap-2 items-center'>
                   <button onClick={decreaseQty}>-</button>
@@ -133,7 +141,7 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
       <div className='w-full h-fit mt-4 rounded bg-white p-7'>
-        <p className='text-black text-[20px] font-normal pb-4 border-b border-gray-300'>
+        <p className='text-black text-[16px] md:text-[20px] font-normal pb-4 border-b border-gray-300'>
           Other products for you
         </p>
         <OtherProducts />

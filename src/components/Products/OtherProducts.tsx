@@ -43,6 +43,7 @@ const OtherProducts = () => {
               {products.map(
                 ({ id, title, category, description, image, price }) => (
                   <Card
+                    key={id}
                     id={id}
                     title={title}
                     price={price}
