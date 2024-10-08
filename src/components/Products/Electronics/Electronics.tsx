@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { selectCartItems } from "../../../redux/cartSlice";
 
-const Electronics: React.FC = () => {
+const Electronics = () => {
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
 
   return (
