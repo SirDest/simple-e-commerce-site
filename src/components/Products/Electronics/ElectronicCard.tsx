@@ -5,7 +5,7 @@ import Loading from "../../Loading";
 import ErrorPage from "../../ErrorPage";
 import Card from "../Card";
 
-const ElectronicCard: React.FC = () => {
+const ElectronicCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
