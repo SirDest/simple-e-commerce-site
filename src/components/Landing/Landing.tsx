@@ -5,7 +5,7 @@ import ErrorPage from "../ErrorPage";
 import Loading from "../Loading";
 import Card from "../Products/Card";
 
-const Landing: React.FC = () => {
+const Landing = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,6 +30,7 @@ const Landing: React.FC = () => {
 
     getProducts();
   }, []);
+
   return (
     <>
       {error ? (

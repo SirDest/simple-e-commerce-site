@@ -8,7 +8,7 @@ import { selectCartItems } from "../../redux/cartSlice";
 import HeaderDropDown from "./HeaderDropDown";
 import { toast } from "react-toastify";
 
-const Header: React.FC = () => {
+const Header = () => {
   const [sideBar, setSideBar] = useState<boolean>(false);
 
   const cartItems = useSelector((state: RootState) => selectCartItems(state));

@@ -7,7 +7,7 @@ import CartItems from "./CartItems";
 import { selectTotalPrice } from "../../redux/selectors";
 import React from "react";
 
-const Cart: React.FC = () => {
+const Cart  = () => {
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
 
   const totalPrice = useSelector(selectTotalPrice);

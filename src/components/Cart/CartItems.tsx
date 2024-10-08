@@ -11,7 +11,7 @@ import {
 import EmptyCart from "./EmptyCart";
 import { toast } from "react-toastify";
 
-const CartItems: React.FC = () => {
+const CartItems = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
 

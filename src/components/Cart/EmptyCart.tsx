@@ -3,7 +3,7 @@ import { generateClassName } from "../utils/tailwind";
 
 const errorStyle = ["md:text-[15px]", "text-[13px]"];
 
-const EmptyCart: React.FC = () => {
+const EmptyCart = () => {
   return (
     <div className='w-full flex items-center justify-center flex-col py-3'>
       <p className='md:text-[21px] lg:text-[24px] text-[15px] py-2 font-bold'>

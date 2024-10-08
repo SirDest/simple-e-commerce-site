@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoCartOutline } from "react-icons/io5";
 import OtherProducts from "./OtherProducts";
 
-const ProductDetails: React.FC = () => {
+const ProductDetails = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => selectCartItems(state));
   const { id } = useParams<{ id: string }>();

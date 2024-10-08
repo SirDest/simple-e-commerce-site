@@ -4,14 +4,14 @@ import { addtocart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
 import { Product } from "../../types";
 
-const Card: React.FC<Product> = ({
+const Card = ({
   id,
   title,
   image,
   price,
   category,
   description,
-}) => {
+}: Product) => {
   const dispatch = useDispatch();
 
   const handleCartClick = (
